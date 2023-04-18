@@ -2,11 +2,17 @@
 
 中山大学学位论文 Typst 模板，项目基于 [PKUTHSS-Typst](https://github.com/lucifer1004/pkuthss-typst) 重构。
 
+当前还未完全符合学位论文格式要求，欢迎同学们贡献代码！模板交流 QQ 群：797942860
+
 输出成品文件预览：[thesis.pdf](https://liuhaohua.com/sysu-thesis-typst/thesis.pdf)
+
+**Q：我不会 LaTeX，可以用这个模板写论文吗？**
+
+**A：完全可以！Typst 是一个比 LaTeX 更简单的排版语言，同时安装更加方便，编译更加快速！**
 
 ## 使用方法
 
-**由于 Typst 还处于初期的快速开发阶段，本项目需要使用从源码编译的 Typst 版本才能正常生成 PDF。**
+**由于 Typst 还处于初期的快速开发阶段，本项目需要使用从源码编译的 Typst 版本才能正常生成 PDF。仓库提供了一键安装脚本，按照使用说明运行即可。**
 
 ### Windows 用户
 
