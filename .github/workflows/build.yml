@@ -1,0 +1,46 @@
+name: Publish preview PDF
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Deploy docs
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}thesis.pdf
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v3
+        with:  
+          fetch-depth: 0
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - name: Install typst
+        # run: 'sudo apt-get update && sudo apt install -y ripgrep wget curl && (curl -s https://api.github.com/repos/typst/typst/releases | rg "browser_download_url.*typst-x86_64-unknown-linux-gnu.tar.gz" | head -1 | cut -d : -f 2,3 | tr -d \" | wget -qi -) && tar xf typst-x86_64-unknown-linux-gnu.tar.gz && sudo mv typst-x86_64-unknown-linux-gnu/typst /usr/local/bin/typst'
+        run: 'cargo install --git https://github.com/typst/typst'
+      - name: Build PDF
+        run: 'mkdir build && typst --font-path fonts compile thesis.typ build/thesis.pdf'
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: 'build'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
