@@ -1,6 +1,8 @@
 @echo off 
+chcp 65001>nul
 set Path=%cd%\;%Path%
 set TYPST_FONT_PATHS=%cd%\fonts
+echo ç¼–è¯‘ä¸­â€¦â€¦
 typst --font-path fonts compile thesis.typ
-echo ÔËÐÐ½áÊø£¬°´ÈÎÒâ¼üÍË³ö
+echo å‘½ä»¤è¿è¡Œå®Œæ¯•ï¼ŒæŒ‰ä»»æ„é”®é€€å‡º
 pause>nul
