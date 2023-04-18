@@ -2,9 +2,11 @@
 
 中山大学学位论文 Typst 模板，项目基于 [PKUTHSS-Typst](https://github.com/lucifer1004/pkuthss-typst) 重构。
 
-输出成品文件预览： [thesis.pdf](https://liuhaohua.com/sysu-thesis-typst/thesis.pdf)
+输出成品文件预览：[thesis.pdf](https://liuhaohua.com/sysu-thesis-typst/thesis.pdf)
 
 ## 使用方法
+
+**由于 Typst 还处于初期的快速开发阶段，本项目需要使用从源码编译的 Typst 版本才能正常生成 PDF。**
 
 ### Windows 用户
 
