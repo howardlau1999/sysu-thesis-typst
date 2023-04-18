@@ -1,2 +1,2 @@
-compile.bat text=crlf
-install_typst.ps1 text=crlf
+compile.bat text eol=crlf
+install_typst.ps1 text eol=crlf
