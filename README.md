@@ -18,14 +18,14 @@
 
 ### Windows 用户
 
-1. [下载本仓库](https://gitee.com/howardlau/sysu-thesis-typst/repository/archive/master.zip)，或者使用 `git clone https://github.com/howardlau1999/sysu-thesis-typst` 命令克隆本仓库。
+1. [下载本仓库](https://github.com/howardlau1999/sysu-thesis-typst/archive/refs/heads/master.zip)，或者使用 `git clone https://github.com/howardlau1999/sysu-thesis-typst` 命令克隆本仓库。
 2. 右键 `install_typst.ps1` 文件，选择“用 Powershell 运行”，等待 Typst 安装完成。
 3. 根据 [Typst 文档](https://typst.app/docs/)，参考 [项目结构](#项目结构) 中的说明，按照你的需要修改论文的各个部分。
 4. 双击运行 `compile.bat`，即可生成 `thesis.pdf` 文件。
 
 ### Linux/macOS 用户
 
-1. [下载本仓库](https://gitee.com/howardlau/sysu-thesis-typst/repository/archive/master.zip)，或者使用 `git clone https://github.com/howardlau1999/sysu-thesis-typst` 命令克隆本仓库。
+1. [下载本仓库](https://github.com/howardlau1999/sysu-thesis-typst/archive/refs/heads/master.zip)，或者使用 `git clone https://github.com/howardlau1999/sysu-thesis-typst` 命令克隆本仓库。
 2. 使用命令行安装 Rust 工具链以及 Typst：
 
 ```bash
