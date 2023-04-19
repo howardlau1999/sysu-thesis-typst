@@ -163,7 +163,7 @@
       }
       imagecounter.update(())
       tablecounter.update(())
-      rawcounter.update(0)
+      rawcounter.update(())
       equationcounter.update(())
 
       set align(center)

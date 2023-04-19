@@ -34,10 +34,4 @@
   #h(0em, weak: true)
 ]
 
-#let lengthceil(len, unit: 字号.小四) = {
-  let start = unit
-  while start < len {
-    start = start + unit
-  }
-  start
-}
+#let lengthceil(len, unit: 字号.小四) = calc.ceil(len / unit) * unit
