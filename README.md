@@ -1,5 +1,7 @@
 # sysu-thesis-typst
 
+[Gitee 仓库镜像](https://gitee.com/howardlau/sysu-thesis-typst)（自动同步 GitHub）
+
 中山大学学位论文 Typst 模板，项目基于 [PKUTHSS-Typst](https://github.com/lucifer1004/pkuthss-typst) 重构。
 
 当前还未完全符合学位论文格式要求，欢迎同学们贡献代码！模板交流 QQ 群：797942860（[点此直接加入](https://jq.qq.com/?_wv=1027&k=m58va1kd)）
@@ -16,15 +18,15 @@
 
 ### Windows 用户
 
-1. 下载本仓库，或者使用 `git clone https://github.com/howardlau1999/sysu-thesis-typst` 命令克隆本仓库。
+1. [下载本仓库](https://gitee.com/howardlau/sysu-thesis-typst/repository/archive/master.zip)，或者使用 `git clone https://github.com/howardlau1999/sysu-thesis-typst` 命令克隆本仓库。
 2. 右键 `install_typst.ps1` 文件，选择“用 Powershell 运行”，等待 Typst 安装完成。
 3. 根据 [Typst 文档](https://typst.app/docs/)，参考 [项目结构](#项目结构) 中的说明，按照你的需要修改论文的各个部分。
 4. 双击运行 `compile.bat`，即可生成 `thesis.pdf` 文件。
 
 ### Linux/macOS 用户
 
-1. 下载本仓库，或者使用 `git clone https://github.com/howardlau1999/sysu-thesis-typst` 命令克隆本仓库。
-2. 安装 Rust 工具链以及 Typst：
+1. [下载本仓库](https://gitee.com/howardlau/sysu-thesis-typst/repository/archive/master.zip)，或者使用 `git clone https://github.com/howardlau1999/sysu-thesis-typst` 命令克隆本仓库。
+2. 使用命令行安装 Rust 工具链以及 Typst：
 
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
