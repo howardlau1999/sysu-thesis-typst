@@ -4,7 +4,7 @@
 
 当前还未完全符合学位论文格式要求，欢迎同学们贡献代码！模板交流 QQ 群：797942860（[点此直接加入](https://jq.qq.com/?_wv=1027&k=m58va1kd)）
 
-输出成品文件预览：[thesis.pdf](https://liuhaohua.com/sysu-thesis-typst/thesis.pdf)
+输出成品文件预览（每 6 小时自动更新）：[thesis.pdf](https://liuhaohua.com/sysu-thesis-typst/thesis.pdf)
 
 **Q：我不会 LaTeX，可以用这个模板写论文吗？**
 

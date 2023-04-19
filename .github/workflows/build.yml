@@ -5,7 +5,7 @@ on:
       - master
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '3 0,6,12,18 * * *'
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
