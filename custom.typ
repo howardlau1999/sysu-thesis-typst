@@ -7,3 +7,5 @@
   楷体: ("Times New Roman", "Adobe Kaiti Std R", "KaiTi"),
   代码: ("Inconsolata", "Source Han Sans HW SC", "Times New Roman", "SimSun"),
 )
+
+#let 强调色 = cmyk(100%, 0%, 100%, 60%)

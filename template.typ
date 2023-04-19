@@ -34,7 +34,7 @@
           }
           if next_heading == "摘要" and calc.odd(loc.page()) {
             [
-              摘要
+              #align(center, 中文页眉)
               #v(-1em)
               #line(length: 100%)
             ]
@@ -60,22 +60,24 @@
             } else {
               let el = elems.last()
               [
-                #let numbering = if el.numbering == chinesenumbering {
-                  chinesenumbering(..counter(heading).at(el.location()), location: el.location())
-                } else if el.numbering != none {
-                  numbering(el.numbering, ..counter(heading).at(el.location()))
-                }
-                #if numbering != none {
-                  numbering
-                  h(0.5em)
-                }
-                #el.body
+                // #let numbering = if el.numbering == chinesenumbering {
+                //   chinesenumbering(..counter(heading).at(el.location()), location: el.location())
+                // } else if el.numbering != none {
+                //   numbering(el.numbering, ..counter(heading).at(el.location()))
+                // }
+                // #if numbering != none {
+                //   numbering
+                //   h(0.5em)
+                // }
+                #中文页眉
                 #v(-1em)
                 #line(length: 100%)
               ]
             }
           }
-      }]}),
+        }
+      ]
+    }),
     footer: locate(loc => {
       [
         #set text(字号.五号)
@@ -301,10 +303,8 @@
 
   set align(left + top)
   set text(字号.小四)
-  heading(numbering: none, outlined: false, "版权声明")
-  par(justify: true, first-line-indent: 2em, leading: 行距)[
-    任何收存和保管本论文各种版本的单位和个人，未经本论文作者同意，不得将本论文转借他人，亦不得随意复制、抄录、拍照或以任何方式传播。否则，引起有碍作者著作权之问题，将可能承担法律责任。
-  ]
+
+  include "templates/declaration.typ" 
 
   locate(loc => {
     if alwaysstartodd {
