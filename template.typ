@@ -146,7 +146,7 @@
     ]
 
     #if it.level == 1 {
-      if not it.body.text in ("Abstract", "学位论文使用授权说明")  {
+      if not it.body.text in ("ABSTRACT", "学位论文使用授权说明")  {
         pagebreak(weak: true)
       }
       locate(loc => {
