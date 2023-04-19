@@ -8,9 +8,9 @@
   #include "../chapters/abstract-cn.typ"
   #import "../chapters/abstract-cn.typ": 中文关键词
 
-  #v(1fr)
+  #linebreak()
   #set par(first-line-indent: 0em)
-  *关键词：*
+  #text("关键词：", weight: "bold")
   #中文关键词.join("，")
   #v(2em)
 ]
