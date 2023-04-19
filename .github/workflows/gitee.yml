@@ -1,6 +1,9 @@
 name: Sync To Gitee
 
-on: [ push, delete, create ]
+on:
+  push:
+    branches:
+      - master
 
 concurrency:
   group: "sync-to-gitee"

@@ -20,11 +20,8 @@ concurrency:
 
 jobs:
   build:
-    name: Deploy docs
+    name: Build preview PDF
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}thesis.pdf
     steps:
       - name: Checkout master
         uses: actions/checkout@v3
@@ -43,6 +40,49 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: 'build'
+  deploy-github:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}thesis.pdf
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
+  deploy-gitee:
+    name: Deploy to Gitee Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: gitee-pages
+      url: https://howardlau.gitee.io/sysu-thesis-typst/thesis.pdf
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: github-pages
+      - name: Extract artifact
+        run: | 
+          mkdir -p $RUNNER_TEMP/gitee_pages
+          tar -C $RUNNER_TEMP/gitee_pages -xf artifact.tar
+      - name: Deploy to Gitee Pages
+        env:
+          GITEE_RSA_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$GITEE_RSA_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+
+          git config --global user.name "Howard Lau"
+          git config --global user.email "howardlau1999@hotmail.com"
+          
+          cd $RUNNER_TEMP/gitee_pages
+          git init
+          git checkout -b gh-pages
+          echo "<html><head><meta http-equiv=\"refresh\" content=\"0; url=thesis.pdf\" /></head></html>" > index.html
+          git add .
+          git commit -m "Deploy to Gitee Pages"
+          export GIT_SSH_COMMAND="ssh -v -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no"
+          git push --force --quiet git@gitee.com:howardlau/sysu-thesis-typst.git gh-pages
