@@ -29,9 +29,22 @@
 2. 使用命令行安装 Rust 工具链以及 Typst：
 
 ```bash
+# 安装 Rust 环境并激活，之前安装过则不需要执行下面这两行
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 source $HOME/.cargo/env
+
+# 安装 Typst CLI
 cargo install --git https://github.com/typst/typst.git
+
+# 访问缓慢的话，执行以下命令设置清华镜像源，并从镜像站安装
+cat << EOF > $HOME/.cargo/config
+[source.crates-io]
+replace-with = "tuna"
+
+[source.tuna]
+registry = "https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git"
+EOF
+cargo install --git https://ghproxy.com/https://github.com/typst/typst.git
 ```
 
 3. 根据 [Typst 文档](https://typst.app/docs/)，参考 [项目结构](#项目结构) 中的说明，按照你的需要修改论文的各个部分。
