@@ -1,0 +1,21 @@
+name: Sync To Gitee
+
+on: [ push, delete, create ]
+
+concurrency:
+  group: "sync-to-gitee"
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: pixta-dev/repository-mirroring-action@v1
+        with:
+          target_repo_url:
+            git@gitee.com:howardlau/sysu-thesis-typst.git
+          ssh_private_key:
+            ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
