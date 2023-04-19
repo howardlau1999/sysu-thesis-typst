@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: pixta-dev/repository-mirroring-action@v1
+      - uses: howardlau1999/repository-mirroring-action@main
         with:
           target_repo_url:
             git@gitee.com:howardlau/sysu-thesis-typst.git
