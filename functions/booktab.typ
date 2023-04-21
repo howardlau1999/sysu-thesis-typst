@@ -14,7 +14,7 @@
 
   let content_aligns = ()
   for i in range(0, contents.len()) {
-    content_aligns.push(aligns.at(calc.mod(i, aligns.len())))
+    content_aligns.push(aligns.at(calc.rem(i, aligns.len())))
   }
 
   figure(
