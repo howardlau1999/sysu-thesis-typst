@@ -1,2 +1,2 @@
 thesis:
-	typst --font-path fonts compile thesis.typ
+	typst compile --font-path fonts thesis.typ
