@@ -17,11 +17,11 @@
           let width = measure(maybe_number, styles).width
           box(
             width: lengthceil(width),
-            maybe_number
+            link(el.location(), maybe_number)
           )
         })
 
-        el.caption
+        link(el.location(), el.caption)
 
         // Filler dots
         box(width: 1fr, h(10pt) + box(width: 1fr, repeat[.]) + h(10pt))
@@ -33,12 +33,12 @@
         } else {
           counter(page).at(footers.first().location()).first()
         }
-        str(page_number)
+        link(el.location(), str(page_number))
         linebreak()
         v(-0.2em)
       }
 
-      link(el.location(), line)
+      line
     }
   })
 }

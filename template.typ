@@ -125,8 +125,8 @@
   set list(indent: 2em)
   set enum(indent: 2em)
 
-  show strong: it => textbf(it)
-  show emph: it => textit(it)
+  show strong: it => text(font: 字体.黑体, weight: "semibold", it.body)
+  show emph: it => text(font: 字体.楷体, style: "italic", it.body)
   show par: set block(spacing: 行距)
   show raw: set text(font: 字体.代码)
 
@@ -138,10 +138,10 @@
       #set text(size)
       #v(2em)
       #if it.numbering != none {
-        textbf(counter(heading).display())
+        strong(counter(heading).display())
         h(0.5em)
       }
-      #textbf(it.body)
+      #strong(it.body)
       #v(1em)
     ]
 

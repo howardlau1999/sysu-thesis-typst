@@ -37,7 +37,7 @@
 
 #let fieldname(name) = [
   #set align(right + top)
-  #textbf(name)
+  #strong(name)
   #h(0.25em)
 ]
 

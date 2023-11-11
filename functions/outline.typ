@@ -36,17 +36,17 @@
             let width = measure(maybe_number, styles).width
             box(
               width: lengthceil(width),
-              if el.level == 1 {
-                textbf(maybe_number)
+              link(el.location(), if el.level == 1 {
+                strong(maybe_number)
               } else {
                 maybe_number
               }
-            )
+            ))
           })
         }
 
         if el.level == 1 {
-          textbf(el.body)
+          strong(el.body)
         } else {
           el.body
         }
@@ -65,17 +65,17 @@
         } else {
           counter(page).at(footer.first().location()).first()
         }
-        if el.level == 1 {
-          textbf(str(page_number))
+        link(el.location(), if el.level == 1 {
+          strong(str(page_number))
         } else {
           str(page_number)
-        }
+        })
 
         linebreak()
         v(-0.2em)
       }
 
-      link(el.location(), line)
+      line
     }
   })
 }

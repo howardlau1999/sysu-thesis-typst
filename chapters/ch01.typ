@@ -61,9 +61,31 @@ Typst 中的标题使用 `=` 表示，其后跟着标题的内容。`=` 的数�
   ],
   ```typ
 遵循 sysu-thesis 的惯例，使用 *黑体* 表示粗体，_楷体_ 表示斜体。
+*bold* and _italic_ are very simple.
   ```,
   [
 遵循 sysu-thesis 的惯例，使用 *黑体* 表示粗体，_楷体_ 表示斜体。
+*bold* and _italic_ are very simple.
+  ]
+)\
+
+由于绝大部分中文字体只有单一字形，这里遵循 `sysu-thesis` 的惯例，使用#strong[黑体]表示粗体，#emph[楷体]表示斜体。但需要注意的是，由于语法解析的问题， `*...*` 和 `_..._` 的前后可能需要空格分隔，而这有时会导致不必要的空白。 如果不希望出现这一空白，可以直接采用 `#strong` 或 `#emph`。
+
+#table(
+  columns: (1fr, 1fr),
+  [
+    #set align(center)
+    代码
+  ],
+  [
+    #set align(center)
+    渲染结果
+  ],
+  ```typ
+对于中文情形，*使用 \* 加粗* 会导致额外的空白，#strong[使用 \#strong 加粗]则不会。
+  ```,
+  [
+对于中文情形，*使用 \* 加粗* 会导致额外的空白，#strong[使用 \#strong 加粗]则不会。
   ]
 )\
 
@@ -122,8 +144,6 @@ Typst 中的标题使用 `=` 表示，其后跟着标题的内容。`=` 的数�
 == 表格
 
 在 Typst 中，定义表格的默认方式是 `table` 函数。但如果需要给表格增加标题，或者在文章中引用表格，则需要将其放置在 `figure` 中，就像下面这样：
-
-#pagebreak()
 
 #table(
   columns: (1fr, 1fr),
@@ -215,8 +235,6 @@ Typst 中的标题使用 `=` 表示，其后跟着标题的内容。`=` 的数�
 == 公式
 
 @eq 是一个公式。代码中的 `<eq>` 是这一公式的标签，可以在文中通过 `@eq` 来引用。
-
-#pagebreak()
 
 #table(
   columns: (1fr, 1fr),

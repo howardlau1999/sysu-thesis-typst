@@ -20,18 +20,5 @@
   小七: 5pt,
 )
 
-#let textit(it) = [
-  #set text(font: 字体.楷体, style: "italic")
-  #h(0em, weak: true)
-  #it
-  #h(0em, weak: true)
-]
-
-#let textbf(it) = [
-  #set text(font: 字体.黑体, weight: "semibold")
-  #h(0em, weak: true)
-  #it
-  #h(0em, weak: true)
-]
 
 #let lengthceil(len, unit: 字号.小四) = calc.ceil(len / unit) * unit

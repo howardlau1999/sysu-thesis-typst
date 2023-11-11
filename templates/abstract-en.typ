@@ -6,7 +6,7 @@
   // #[
   //   #set text(字号.小二)
   //   #set align(center)
-  //   #textbf(论文英文题目)
+  //   #strong(论文英文题目)
   // ]
   // #[
   //   #set align(center)

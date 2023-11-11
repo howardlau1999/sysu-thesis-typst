@@ -1,5 +1,3 @@
-#import "../functions/style.typ": textbf
-
 #let chineseunderline(s, width: 300pt, bold: false) = {
   let chars = s.clusters()
   let n = chars.len()
@@ -14,7 +12,7 @@
 
       if measure(nxt, styles).width > width or c == "\n" {
         if bold {
-          ret.push(textbf(now))
+          ret.push(strong(now))
         } else {
           ret.push(now)
         }
@@ -34,7 +32,7 @@
 
     if now.len() > 0 {
       if bold {
-        ret.push(textbf(now))
+        ret.push(strong(now))
       } else {
         ret.push(now)
       }

@@ -32,7 +32,7 @@
               columns: columns,
               ..zip(headers, aligns).map(it => [
                 #set align(it.last())
-                #textbf(it.first())
+                #strong(it.first())
               ])
             )
           )
@@ -45,7 +45,7 @@
             grid(
               columns: columns,
               row-gutter: 1em,
-              ..zip(contents, content_aligns).map(it => [
+              ..contents.zip(content_aligns).map(it => [
                 #set align(it.last())
                 #it.first()
               ])
