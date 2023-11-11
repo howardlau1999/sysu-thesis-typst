@@ -1,7 +1,7 @@
 #import "../functions/style.typ": textbf
 
 #let chineseunderline(s, width: 300pt, bold: false) = {
-  let chars = s.split("")
+  let chars = s.clusters()
   let n = chars.len()
   style(styles => {
     let i = 0

@@ -1,6 +1,7 @@
 #let partcounter = counter("part")
 #let chaptercounter = counter("chapter")
 #let appendixcounter = counter("appendix")
+#let footnotecounter = counter(footnote)
 #let rawcounter = counter(figure.where(kind: "code"))
 #let imagecounter = counter(figure.where(kind: image))
 #let tablecounter = counter(figure.where(kind: table))

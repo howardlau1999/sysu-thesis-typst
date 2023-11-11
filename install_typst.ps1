@@ -3,7 +3,8 @@ $OutputEncoding = [System.Text.Encoding]::UTF8
 
 # Check if Rust is already installed
 if (Get-Command cargo -ErrorAction SilentlyContinue) {
-  Write-Output "检测到 Rust 已安装，跳过安装。"
+  Write-Output "检测到 Rust 已安装，尝试更新。"
+  rustup update
 }
 else {
   # Download the installer

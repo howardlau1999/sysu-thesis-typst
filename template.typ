@@ -161,6 +161,7 @@
       if it.numbering != none {
         chaptercounter.step()
       }
+      footnotecounter.update(())
       imagecounter.update(())
       tablecounter.update(())
       rawcounter.update(())
