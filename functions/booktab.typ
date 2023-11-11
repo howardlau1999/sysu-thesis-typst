@@ -17,7 +17,7 @@
     content_aligns.push(aligns.at(calc.rem(i, aligns.len())))
   }
 
-  figure(
+  return figure(
     block(
       width: width,
       grid(
