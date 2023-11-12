@@ -13,7 +13,7 @@
 
 附录中也可以插入公式，如 @appendix-eq。
 
-#table(
+#tablex(
   columns: (1fr, 1fr),
   [
     #set align(center)
@@ -57,7 +57,7 @@ $ bold(Sigma < Tau) < italic(Upsilon < Phi) < Chi < Psi < Omega $
 
 @complex 是一个非常复杂的公式的例子：
 
-#table(
+#tablex(
   columns: (1fr, 1fr),
   [
     #set align(center)

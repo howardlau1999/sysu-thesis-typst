@@ -11,7 +11,7 @@ Typst 中的标题使用 `=` 表示，其后跟着标题的内容。`=` 的数�
 
 下面是一个示例：
 
-#table(
+#tablex(
   columns: (1fr, 1fr),
   [
     #set align(center)
@@ -49,7 +49,7 @@ Typst 中的标题使用 `=` 表示，其后跟着标题的内容。`=` 的数�
 
 与 Markdown 类似，在 Typst 中，使用 `*` 表示粗体，使用 `_` 表示斜体。下面是一个示例：
 
-#table(
+#tablex(
   columns: (1fr, 1fr),
   [
     #set align(center)
@@ -71,7 +71,7 @@ Typst 中的标题使用 `=` 表示，其后跟着标题的内容。`=` 的数�
 
 由于绝大部分中文字体只有单一字形，这里遵循 `sysu-thesis` 的惯例，使用#strong[黑体]表示粗体，#emph[楷体]表示斜体。但需要注意的是，由于语法解析的问题， `*...*` 和 `_..._` 的前后可能需要空格分隔，而这有时会导致不必要的空白。 如果不希望出现这一空白，可以直接采用 `#strong` 或 `#emph`。
 
-#table(
+#tablex(
   columns: (1fr, 1fr),
   [
     #set align(center)
@@ -93,7 +93,7 @@ Typst 中的标题使用 `=` 表示，其后跟着标题的内容。`=` 的数�
 
 从 v0.4 版本开始，Typst 原生支持了脚注功能。本模板中，默认每一章节的脚注编号从 1 开始。
 
-#table(
+#tablex(
   columns: (1fr, 1fr),
   [
     #set align(center)
@@ -115,7 +115,7 @@ Typst 中的标题使用 `=` 表示，其后跟着标题的内容。`=` 的数�
 
 在 Typst 中插入图片的默认方式是 `image` 函数。如果需要给图片增加标题，或者在文章中引用图片，则需要将其放置在 `figure` 中，就像下面这样：
 
-#table(
+#tablex(
   columns: (1fr, 1fr),
   [
     #set align(center)
@@ -145,7 +145,7 @@ Typst 中的标题使用 `=` 表示，其后跟着标题的内容。`=` 的数�
 
 在 Typst 中，定义表格的默认方式是 `table` 函数。但如果需要给表格增加标题，或者在文章中引用表格，则需要将其放置在 `figure` 中，就像下面这样：
 
-#table(
+#tablex(
   columns: (1fr, 1fr),
   [
     #set align(center)
@@ -158,7 +158,7 @@ Typst 中的标题使用 `=` 表示，其后跟着标题的内容。`=` 的数�
   codeblock(
   ```typ
 #figure(
-  table(
+  tablex(
     columns: (auto, auto, auto, auto),
     inset: 10pt,
     align: horizon,
@@ -176,7 +176,7 @@ Typst 中的标题使用 `=` 表示，其后跟着标题的内容。`=` 的数�
   ),
   [
     #figure(
-      table(
+      tablex(
         columns: (auto, auto, auto, auto),
         inset: 10pt,
         align: horizon,
@@ -196,7 +196,7 @@ Typst 中的标题使用 `=` 表示，其后跟着标题的内容。`=` 的数�
 
 默认的表格不是特别美观，本模板中提供了 `booktab` 函数用于生成三线表，@booktab 是一个示例。代码中的 `<booktab>` 是这一表格的标签，可以在文中通过 `@booktab` 来引用。
 
-#table(
+#tablex(
   columns: (1fr, 1fr),
   [
     #set align(center)
@@ -236,7 +236,7 @@ Typst 中的标题使用 `=` 表示，其后跟着标题的内容。`=` 的数�
 
 @eq 是一个公式。代码中的 `<eq>` 是这一公式的标签，可以在文中通过 `@eq` 来引用。
 
-#table(
+#tablex(
   columns: (1fr, 1fr),
   [
     #set align(center)
@@ -256,7 +256,7 @@ $ E = m c^2 $ <eq>
 
 @eq2 是一个多行公式。
 
-#table(
+#tablex(
   columns: (1fr, 1fr),
   [
     #set align(center)
@@ -279,7 +279,7 @@ $ sum_(k=0)^n k
 
 @eq3 到 @eq6 中给出了更多的示例。
 
-#table(
+#tablex(
   columns: (1fr, 1fr),
   [
     #set align(center)
@@ -309,7 +309,7 @@ $ lim_x =
 
 像 Markdown 一样，我们可以在文档中插入代码块：
 
-#table(
+#tablex(
   columns: (1fr, 1fr),
   [
     #set align(center)
@@ -339,7 +339,7 @@ $ lim_x =
 
 如果想要给代码块加上标题，并在文章中引用代码块，可以使用本模板中定义的 `codeblock` 命令。其中，`caption` 参数用于指定代码块的标题，`outline` 参数用于指定代码块显示时是否使用边框。下面给出的 @code 是一个简单的 Python 程序。其中的 `<code>` 是这一代码块的标签，意味着这一代码块可以在文档中通过 `@code` 来引用。
 
-#table(
+#tablex(
   columns: (1fr, 1fr),
   [
     #set align(center)
@@ -399,7 +399,7 @@ Typst 支持 BibLaTeX 格式的 `.bib` 文件，同时也新定义了一种基�
 
 #pagebreak()
 
-#table(
+#tablex(
   columns: (1fr, 1fr),
   [
     #set align(center)
