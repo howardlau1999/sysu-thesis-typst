@@ -386,7 +386,7 @@ $ lim_x =
       set align(left)
       raw
     },
-    caption: caption, kind: "code", supplement: ""
+    caption: caption, kind: "code", supplement: "代码"
   )
 }
   ```,

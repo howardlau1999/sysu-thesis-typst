@@ -188,32 +188,17 @@
       it.body
       [
         #set text(字号.五号)
-        图
-        #locate(loc => {
-          chinesenumbering(chaptercounter.at(loc).first(), imagecounter.at(loc).first(), location: loc)
-        })
-        #h(1em)
         #it.caption
       ]
     } else if it.kind == table {
       [
         #set text(字号.五号)
-        表
-        #locate(loc => {
-          chinesenumbering(chaptercounter.at(loc).first(), tablecounter.at(loc).first(), location: loc)
-        })
-        #h(1em)
         #it.caption
       ]
       it.body
     } else if it.kind == "code" {
       [
         #set text(字号.五号)
-        代码
-        #locate(loc => {
-          chinesenumbering(chaptercounter.at(loc).first(), rawcounter.at(loc).first(), location: loc)
-        })
-        #h(1em)
         #it.caption
       ]
       it.body
@@ -221,77 +206,51 @@
   ]
 
   show ref: it => {
-    locate(loc => {
-      let elems = query(it.target, loc)
+    if it.element == none {
+      // Keep citations as is
+      it
+    } else {
+      // Remove prefix spacing
+      h(0em, weak: true)
 
-      if elems == () {
-        // Keep citations as is
-        it
-      } else {
-        // Remove prefix spacing
-        h(0em, weak: true)
-
-        let el = elems.first()
-        let el_loc = el.location()
-        if el.func() == math.equation {
-          // Handle equations
+      let el = it.element
+      let el_loc = el.location()
+      if el.func() == math.equation {
+        // Handle equations
+        link(el_loc, [
+          式
+          #chinesenumbering(chaptercounter.at(el_loc).first(), equationcounter.at(el_loc).first(), location: el_loc, brackets: true)
+        ])
+      } else if el.func() == figure {
+        // Handle figures
+        if el.kind == image {
           link(el_loc, [
-            式
-            #chinesenumbering(chaptercounter.at(el_loc).first(), equationcounter.at(el_loc).first(), location: el_loc, brackets: true)
+            图
+            #chinesenumbering(chaptercounter.at(el_loc).first(), imagecounter.at(el_loc).first(), location: el_loc)
           ])
-        } else if el.func() == figure {
-          // Handle figures
-          if el.kind == image {
-            link(el_loc, [
-              图
-              #chinesenumbering(chaptercounter.at(el_loc).first(), imagecounter.at(el_loc).first(), location: el_loc)
-            ])
-          } else if el.kind == table {
-            link(el_loc, [
-              表
-              #chinesenumbering(chaptercounter.at(el_loc).first(), tablecounter.at(el_loc).first(), location: el_loc)
-            ])
-          } else if el.kind == "code" {
-            link(el_loc, [
-              代码
-              #chinesenumbering(chaptercounter.at(el_loc).first(), rawcounter.at(el_loc).first(), location: el_loc)
-            ])
-          }
-        } else if el.func() == heading {
-          // Handle headings
-          if el.level == 1 {
-            link(el_loc, chinesenumbering(..counter(heading).at(el_loc), location: el_loc))
-          } else {
-            link(el_loc, [
-              节
-              #chinesenumbering(..counter(heading).at(el_loc), location: el_loc)
-            ])
-          }
-        } else {
-          // Handle code blocks
-          // Since the ref is linked to the code block instead of the internal
-          // `figure`, we need to do an extra query here.
-          let figure_el = query(selector(figure).after(el_loc), el_loc).first()
-          let el_loc = figure_el.location()
+        } else if el.kind == table {
           link(el_loc, [
-            #if figure_el.kind == image {
-              [图]
-            } else if figure_el.kind == table {
-              [表]
-            } else if figure_el.kind == "code" {
-              [代码]
-            }
-            #chinesenumbering(
-              chaptercounter.at(el_loc).first(),
-              counter(figure.where(kind: figure_el.kind)).at(el_loc).first(), location: el_loc
-           )]
-          )
+            表
+            #chinesenumbering(chaptercounter.at(el_loc).first(), tablecounter.at(el_loc).first(), location: el_loc)
+          ])
+        } else if el.kind == "code" {
+          link(el_loc, [
+            代码
+            #chinesenumbering(chaptercounter.at(el_loc).first(), rawcounter.at(el_loc).first(), location: el_loc)
+          ])
         }
-
-        // Remove suffix spacing
-        h(0em, weak: true)
+      } else if el.func() == heading {
+        // Handle headings
+        if el.level == 1 {  
+          link(el_loc, chinesenumbering(..counter(heading).at(el_loc), location: el_loc))
+        } else {
+          link(el_loc, [
+            节
+            #chinesenumbering(..counter(heading).at(el_loc), location: el_loc)
+          ])
+        }
       }
-    })
+    }
   }
 
   include "templates/cover.typ"
