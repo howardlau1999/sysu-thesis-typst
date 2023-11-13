@@ -255,6 +255,8 @@
 
   include "templates/cover.typ"
 
+  include "templates/cover-no-emblem.typ"
+
   locate(loc => {
     if alwaysstartodd {
       pagebreak()

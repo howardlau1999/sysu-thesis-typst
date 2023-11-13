@@ -4,33 +4,14 @@
 #import "../info.typ": *
 #import "../custom.typ": *
 
-#box(
-  grid(
-    columns: (auto, auto),
-    gutter: 0.4em,
-    image("../images/vi/sysu-emblem.svg", height: 3em, fit: "contain")
-  )
-)
-#linebreak()
-#v(1em)
-#text("本科生毕业论文（设计）", font: 字体.宋体, size: 字号.小初, weight: "semibold", fill: 强调色)
-#hline(thickness: 3pt)
-#v(-1em)
-#hline(thickness: 1.2pt)
+#v(30pt)
 
-#set text(字号.二号)
-#v(60pt)
-#grid(
-  columns: (80pt, 300pt), 
-  [
-    #set align(right + top)
-    题目：
-  ],
-  [
-    #set align(center + horizon)
-    #chineseunderline(论文中文题目, width: 300pt, bold: true)
-  ]
-)
+#set align(center + horizon)
+#strong(论文中文题目)
+
+#v(2em)
+#strong(论文英文题目)
+
 
 #v(60pt)
 #set text(字号.三号)

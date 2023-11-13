@@ -1,9 +1,9 @@
 #let 学校 = "中山大学"
 #let 论文名称 = 学校 + "博士学位论文"
-#let 论文中文题目 = "基于 typst 的学位论文模板"
-#let 论文英文题目 = "A thesis template based on typst"
+#let 论文中文题目 = "基于 typst 的\n学位论文模板"
+#let 论文英文题目 = "A thesis template\nbased on typst"
 #let 日期 = "二零二三年六月"
-#let 中文页眉 = 论文中文题目
+#let 中文页眉 = "基于 typst 的学位论文模板"
 
 #let 中文作者名 = "张三"
 #let 英文作者名 = "Zhang San"
