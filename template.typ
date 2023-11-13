@@ -300,15 +300,15 @@
   })
 
   if listofimage {
-    listoffigures()
+    listoffigures(title: "插图目录", kind: image)
   }
 
   if listoftable {
-    listoffigures(title: "表格", kind: table)
+    listoffigures(title: "表格目录", kind: table)
   }
 
   if listofcode {
-    listoffigures(title: "代码", kind: "code")
+    listoffigures(title: "代码目录", kind: "code")
   }
 
   set align(left + top)

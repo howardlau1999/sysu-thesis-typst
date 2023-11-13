@@ -21,7 +21,7 @@
           )
         })
 
-        link(el.location(), el.caption)
+        link(el.location(), el.caption.body)
 
         // Filler dots
         box(width: 1fr, h(10pt) + box(width: 1fr, repeat[.]) + h(10pt))
