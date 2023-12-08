@@ -33,7 +33,7 @@ jobs:
       - uses: Swatinem/rust-cache@v2
       - name: Install typst
         # run: 'sudo apt-get update && sudo apt install -y ripgrep wget curl && (curl -s https://api.github.com/repos/typst/typst/releases | rg "browser_download_url.*typst-x86_64-unknown-linux-gnu.tar.gz" | head -1 | cut -d : -f 2,3 | tr -d \" | wget -qi -) && tar xf typst-x86_64-unknown-linux-gnu.tar.gz && sudo mv typst-x86_64-unknown-linux-gnu/typst /usr/local/bin/typst'
-        run: 'cargo install --git https://github.com/typst/typst'
+        run: 'cargo install --git https://github.com/typst/typst typst-cli'
       - name: Build PDF
         run: 'mkdir build && typst compile --font-path fonts thesis.typ build/thesis.pdf'
       - name: Upload artifact

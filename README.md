@@ -34,7 +34,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 source $HOME/.cargo/env
 
 # 安装 Typst CLI
-cargo install --git https://github.com/typst/typst.git
+cargo install --git https://github.com/typst/typst.git typst-cli
 
 # 访问缓慢的话，执行以下命令设置清华镜像源，并从镜像站安装
 cat << EOF > $HOME/.cargo/config

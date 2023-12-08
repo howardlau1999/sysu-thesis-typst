@@ -49,7 +49,7 @@ registry = "https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git"
 
 # Run cargo to install the typst binary
 Write-Output "运行 cargo 安装 typst 二进制文件..."
-cargo install --git https://github.com/typst/typst.git
+cargo install --git https://github.com/typst/typst.git typst-cli
 
 # Check if the binary is installed
 if (Get-Command typst -ErrorAction SilentlyContinue) {
