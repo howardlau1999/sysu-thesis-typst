@@ -13,7 +13,7 @@ else {
 
   # Run the installer
   Write-Output "运行 Rustup 安装程序..."
-  Invoke-Command $Env:Temp/rustup-init.exe -y
+  $Env:Temp/rustup-init.exe -y
 
   # Add Rustup to the PATH
   Write-Output "将 Rustup 添加到 PATH 环境变量..."
