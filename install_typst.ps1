@@ -13,7 +13,8 @@ else {
 
   # Run the installer
   Write-Output "运行 Rustup 安装程序..."
-  $Env:Temp/rustup-init.exe -y
+  $Env:RUSTUP_DIST_SERVER = "https://mirrors.tuna.tsinghua.edu.cn/rustup"
+  Start-Process —FilePath $Env:Temp/rustup-init.exe -Args -y
 
   # Add Rustup to the PATH
   Write-Output "将 Rustup 添加到 PATH 环境变量..."
