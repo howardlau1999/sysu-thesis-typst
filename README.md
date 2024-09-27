@@ -1,5 +1,8 @@
 # sysu-thesis-typst
 
+> [!WARNING] 
+> **本项目已暂停维护，请使用 <https://github.com/sysu/better-thesis> 仓库提供的模板**
+
 [Gitee 仓库镜像](https://gitee.com/howardlau/sysu-thesis-typst)（自动同步 [GitHub 主仓库](https://github.com/howardlau1999/sysu-thesis-typst)，仅供只读访问）
 
 中山大学学位论文 Typst 模板，项目基于 [PKUTHSS-Typst](https://github.com/lucifer1004/pkuthss-typst) 重构。
